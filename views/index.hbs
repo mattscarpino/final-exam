@@ -1,0 +1,54 @@
+<div class="all">
+    <h1 class="headers">Todos</h1>
+
+    <div id="newTodo">
+        <h2 class="headers">New Todo</h2>
+        <form action="/newTodo" method="post">
+
+            <label for="selectCategory">Category:</label><br>
+            <select name="selectCategory" id="selectCategory">
+                {{#each categories}}
+                <option value="{{id}}">{{category}}</option>
+                {{/each}}
+            </select><br><br>
+
+            <label for="createTodo">Todo:</label><br>
+            <textarea name="createTodo" id="createTodo" cols="50" rows="5"></textarea>
+            <br><button type="submit">Add Todo</button>
+        </form>
+    </div>
+
+    <div id="pendingTodo">
+        <h2 class="headers">Pending Todos</h2>
+        <table>
+            <th>Todo</th>
+            <th>Category</th>
+            <th>Action</th>
+            {{#each pendingTodos}}
+            <tr>
+                <td>{{todo}}</td>
+                <td>{{category}}</td>
+                <td>
+                    <form action="/completeTodo/{{id}}" method="post"><button type="submit">Done</button></form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    <button onclick="showCompleted()">Show Completed Todos</button>
+
+    <div id="completedTodo">
+        <h2 class="headers">Completed Todos</h2>
+        <table>
+            <th>Todo</th>
+            <th>Category</th>
+            {{#each completedTodos}}
+            <tr>
+                <td>{{todo}}</td>
+                <td>{{category}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

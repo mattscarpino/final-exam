@@ -1,0 +1,46 @@
+html {
+  background-color: #000020;
+  color: white;
+}
+
+.headers {
+  color: #88aa79;
+}
+
+.all {
+  background-color: #222240;
+  border: 1px solid white;
+  margin: 20px;
+  padding: 5px;
+}
+
+#newTodo,
+#pendingTodo,
+#completedTodo {
+  background-color: #444460;
+  border: 1px solid white;
+  margin: 10px;
+  padding: 5px;
+}
+
+#completedTodo {
+  display: none;
+}
+
+table {
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid white;
+  padding: 3px;
+}
+
+th {
+  background-color: #666680;
+}
+
+td {
+  background-color: #8888aa;
+}
